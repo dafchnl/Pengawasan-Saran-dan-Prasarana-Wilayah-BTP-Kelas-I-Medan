@@ -2,6 +2,26 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+    <script>
+(function () {
+
+    const AUTH_KEY = 'BTP_MEDAN_AUTH_SESSION_V17';
+
+    let session = null;
+
+    try {
+        session = sessionStorage.getItem(AUTH_KEY);
+    } catch (e) {
+        session = null;
+    }
+
+    if (!session) {
+        window.location.replace('index.html');
+        return;
+    }
+
+})();
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>BTP Kelas I Medan — Dashboard Rampcheck</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
